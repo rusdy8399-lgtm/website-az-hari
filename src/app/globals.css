@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #00609C;
+  --color-primary-dark: #004875;
+  --color-gold: #F5A623;
+  --color-gold-warm: #FFBA3A;
+  --color-navy: #0F172A;
+  --color-navy-muted: #475569;
+  --color-offwhite: #F8FAFC;
+}
+
+/* ── Base Typography ───────────────────────────────────────────── */
+body {
+  color: var(--color-navy);
+  background-color: #ffffff;
+  font-family: var(--font-body), Inter, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Headings use Oswald — heavy condensed institutional style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), Oswald, Impact, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--color-navy);
+}
+
+/* ── Utility Classes ───────────────────────────────────────────── */
+
+/* Heading style matching reference: ALL CAPS, heavy, tight */
+.heading-hero {
+  font-family: var(--font-heading), Oswald, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.0;
+}
+
+.heading-section {
+  font-family: var(--font-heading), Oswald, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* Label / badge above headings — like "SMA LABSCHOOL KEBAYORAN" small label */
+.label-category {
+  font-family: var(--font-body), Inter, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* ── Islamic Subtle Pattern (kept minimal) ─────────────────────── */
+.islamic-pattern-subtle {
+  background-image: radial-gradient(rgba(245, 166, 35, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Custom Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00609C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #004875;
+}
+
+/* ── Selection ─────────────────────────────────────────────────── */
+::selection {
+  background-color: #00609C;
+  color: #ffffff;
+}
+
+/* ── Smooth hover transitions ──────────────────────────────────── */
+a,
+button {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+/* ── Animate in utility ────────────────────────────────────────── */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideInFromTop 0.2s ease forwards;
+}
