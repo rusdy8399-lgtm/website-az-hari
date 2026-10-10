@@ -18,6 +18,7 @@ interface ProgramDetailViewProps {
 export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program }) => {
   const dict = getDictionary();
   const programsPath = routeMappings.programs;
+  const contactPath = routeMappings.contact;
 
   const relatedPrograms = programsMock
     .filter((p) => p.id !== program.id && p.category === program.category)
@@ -111,8 +112,8 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
                       Yayasan Sosial Azhar Mandiri
                     </p>
                   </div>
-                  <Button href={regPath} variant="primary" className="w-full">
-                    {dict.common.registerNow}
+                  <Button href={contactPath} variant="primary" className="w-full">
+                    {dict.common.contactUs}
                   </Button>
                 </div>
 
