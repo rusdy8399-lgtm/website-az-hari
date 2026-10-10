@@ -27,13 +27,6 @@ export const AboutView: React.FC = () => {
   const contactPath = routeMappings.contact;
   const programsPath = routeMappings.programs;
 
-  const valueIcons: Record<string, React.ReactNode> = {
-    ShieldCheck: <ShieldCheck className="w-6 h-6 text-[#00609C]" />,
-    Award: <Award className="w-6 h-6 text-[#D99A20]" />,
-    HeartHandshake: <HeartHandshake className="w-6 h-6 text-[#064E3B]" />,
-    Users: <Users className="w-6 h-6 text-indigo-600" />
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F5]">
       <TopInfoBar />
@@ -168,30 +161,16 @@ export const AboutView: React.FC = () => {
               </h2>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-6 text-[#475569] leading-relaxed text-base">
+            <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm max-w-4xl mx-auto text-[#475569] leading-relaxed text-base">
               <p>
                 {foundationMock.history}
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100 text-center">
-                <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
-                  <span className="font-heading text-2xl font-bold text-[#00609C]">205+</span>
-                  <p className="text-xs text-slate-600 mt-1">Penerima Manfaat Terdata</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-amber-50/50 border border-amber-100">
-                  <span className="font-heading text-2xl font-bold text-[#D99A20]">10+ Tahun</span>
-                  <p className="text-xs text-slate-600 mt-1">Pengabdian Berkelanjutan</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                  <span className="font-heading text-2xl font-bold text-[#064E3B]">Kec. Praya</span>
-                  <p className="text-xs text-slate-600 mt-1">Wilayah Jangkauan Utama</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* Section 3: Visi, Misi & Tujuan Yayasan */}
-        <section className="py-16 md:py-20 bg-white">
+        <section id="visi-misi" className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
               {/* Visi */}
@@ -261,107 +240,8 @@ export const AboutView: React.FC = () => {
           </div>
         </section>
 
-        {/* Section 4: Nilai-Nilai Utama Yayasan */}
-        <section className="py-16 md:py-20 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-[#00609C] text-xs font-semibold tracking-wide border border-sky-100 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00609C]" />
-                <span>Prinsip Perkhidmatan</span>
-              </div>
-              <h2 className="font-heading text-3xl font-bold text-[#0F172A]">
-                {dict.aboutPage.valuesTitle}
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {foundationMock.values.map((val, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-card transition-shadow"
-                >
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 shadow-xs w-fit mb-4">
-                    {valueIcons[val.icon] || <ShieldCheck className="w-6 h-6 text-[#00609C]" />}
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[#0F172A] mb-2">
-                    {val.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                    {val.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5: Visi Pengembangan (Roadmap) */}
-        <section className="py-16 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-[#D99A20] text-xs font-semibold tracking-wide border border-amber-100 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D99A20]" />
-                <span>Rencana Strategis</span>
-              </div>
-              <h2 className="font-heading text-3xl font-bold text-[#0F172A]">
-                {dict.aboutPage.roadmapTitle}
-              </h2>
-              <p className="text-sm text-[#475569] mt-2">
-                Arah pengembangan kelembagaan yang terencana untuk kemaslahatan masyarakat berkelanjutan.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Jangka Pendek */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200">
-                <div className="inline-block px-3 py-1 rounded-lg bg-sky-100 text-[#00609C] text-xs font-bold uppercase mb-4">
-                  Program Jangka Pendek
-                </div>
-                <ul className="space-y-3 text-sm text-[#475569]">
-                  {foundationMock.roadmaps?.shortTerm.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#00609C] shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Jangka Menengah */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200">
-                <div className="inline-block px-3 py-1 rounded-lg bg-amber-100 text-[#D99A20] text-xs font-bold uppercase mb-4">
-                  Program Jangka Menengah
-                </div>
-                <ul className="space-y-3 text-sm text-[#475569]">
-                  {foundationMock.roadmaps?.mediumTerm.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#D99A20] shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Jangka Panjang (Visi Masa Depan) */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200">
-                <div className="inline-block px-3 py-1 rounded-lg bg-emerald-100 text-[#064E3B] text-xs font-bold uppercase mb-4">
-                  Visi Pengembangan (Jangka Panjang)
-                </div>
-                <ul className="space-y-3 text-sm text-[#475569]">
-                  {foundationMock.roadmaps?.longTerm.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 6: Struktur Kepengurusan Lengkap (Pembina, Pengawas, Pengurus) */}
-        <section className="py-16 md:py-20 bg-slate-50">
+        {/* Section 4: Struktur Kepengurusan Lengkap (Pembina, Pengawas, Pengurus) */}
+        <section id="pengurus" className="py-16 md:py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2 className="font-heading text-3xl font-bold text-[#0F172A]">

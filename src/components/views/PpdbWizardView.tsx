@@ -199,10 +199,10 @@ export const PpdbWizardView: React.FC = () => {
           <Breadcrumb
             items={[
               {
-                label: dict.nav.registration,
-                href: routeMappings.registration,
+                label: 'SMP IT AZZAIN',
+                href: routeMappings['institution-smp'],
               },
-              { label: 'PPDB SMP IT AZZAIN' },
+              { label: 'PPDB Online' },
             ]}
             className="mb-6"
           />

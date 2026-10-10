@@ -18,7 +18,6 @@ interface ProgramDetailViewProps {
 export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program }) => {
   const dict = getDictionary();
   const programsPath = routeMappings.programs;
-  const regPath = routeMappings.registration;
 
   const relatedPrograms = programsMock
     .filter((p) => p.id !== program.id && p.category === program.category)

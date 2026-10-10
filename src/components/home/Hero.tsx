@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, BookOpen, Users, ShieldCheck, Award, HeartHandshake } from 'lucide-react';
+import { ArrowRight, BookOpen, Users } from 'lucide-react';
 import { routeMappings } from '@/lib/i18n';
 
 export const Hero: React.FC = () => {
@@ -74,63 +74,43 @@ export const Hero: React.FC = () => {
           <div className="bg-white rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100/90 p-4.5 sm:p-6 md:p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
               {/* 1. PROFESIONAL */}
-              <div className="flex items-start gap-3.5 pt-3 sm:pt-0 lg:px-4 lg:first:pl-0">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center shrink-0 ring-4 ring-[#E0F2FE]/50 shadow-xs">
-                  <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
-                    PROFESIONAL
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
-                    Layanan sosial terencana, terverifikasi, dan berstandar manajemen akuntabel.
-                  </p>
-                </div>
+              <div className="flex flex-col pt-3 sm:pt-0 lg:px-4 lg:first:pl-0">
+                <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
+                  PROFESIONAL
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
+                  Layanan sosial terencana, terverifikasi, dan berstandar manajemen akuntabel.
+                </p>
               </div>
 
               {/* 2. UNGGUL */}
-              <div className="flex items-start gap-3.5 pt-3 sm:pt-0 lg:px-4">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0 ring-4 ring-[#FEF3C7]/50 shadow-xs">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
-                    UNGGUL
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
-                    Kualitas program terbaik yang berdaya guna dan berdampak nyata.
-                  </p>
-                </div>
+              <div className="flex flex-col pt-3 sm:pt-0 lg:px-4">
+                <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
+                  UNGGUL
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
+                  Kualitas program terbaik yang berdaya guna dan berdampak nyata.
+                </p>
               </div>
 
               {/* 3. MANDIRI */}
-              <div className="flex items-start gap-3.5 pt-3 sm:pt-0 lg:px-4">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#D1FAE5] text-[#059669] flex items-center justify-center shrink-0 ring-4 ring-[#D1FAE5]/50 shadow-xs">
-                  <HeartHandshake className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
-                    MANDIRI
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
-                    Menumbuhkan kemandirian ekonomi, keterampilan, dan karakter anak asuh.
-                  </p>
-                </div>
+              <div className="flex flex-col pt-3 sm:pt-0 lg:px-4">
+                <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
+                  MANDIRI
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
+                  Menumbuhkan kemandirian ekonomi, keterampilan, dan karakter anak asuh.
+                </p>
               </div>
 
               {/* 4. AMANAH */}
-              <div className="flex items-start gap-3.5 pt-3 sm:pt-0 lg:px-4 lg:last:pr-0">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#EDE9FE] text-[#7C3AED] flex items-center justify-center shrink-0 ring-4 ring-[#EDE9FE]/50 shadow-xs">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
-                    AMANAH
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
-                    Transparansi penuh dan integritas dalam menyalurkan setiap amanah.
-                  </p>
-                </div>
+              <div className="flex flex-col pt-3 sm:pt-0 lg:px-4 lg:last:pr-0">
+                <h3 className="font-heading font-extrabold text-sm sm:text-[15px] text-[#00223D] tracking-wider uppercase mb-0.5 sm:mb-1">
+                  AMANAH
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed font-normal">
+                  Transparansi penuh dan integritas dalam menyalurkan setiap amanah.
+                </p>
               </div>
             </div>
           </div>
@@ -139,3 +119,4 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+

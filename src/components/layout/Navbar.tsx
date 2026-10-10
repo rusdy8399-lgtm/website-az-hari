@@ -50,13 +50,12 @@ export const Navbar: React.FC = () => {
   const programsPath = routeMappings.programs;
   const newsPath = routeMappings.news;
   const galleryPath = routeMappings.gallery;
-  const regPath = routeMappings.registration;
   const contactPath = routeMappings.contact;
 
   const aboutSubmenus = [
     { name: 'Profil & Legalitas Yayasan', href: aboutPath, icon: <Building2 className="w-4 h-4 text-[#00609C]" /> },
     { name: 'Struktur Pengurus & Pimpinan', href: `${aboutPath}#pengurus`, icon: <Users className="w-4 h-4 text-[#00609C]" /> },
-    { name: 'Visi, Misi & Roadmap', href: `${aboutPath}#visi-misi`, icon: <Sparkles className="w-4 h-4 text-[#00609C]" /> },
+    { name: 'Visi, Misi & Tujuan', href: `${aboutPath}#visi-misi`, icon: <Sparkles className="w-4 h-4 text-[#00609C]" /> },
   ];
 
   const institutions = [
@@ -121,8 +120,8 @@ export const Navbar: React.FC = () => {
             <Link
               href={homePath}
               className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${isHome
-                  ? 'text-[#00223D]'
-                  : 'text-slate-700 hover:text-[#FF7A00]'
+                ? 'text-[#00223D]'
+                : 'text-slate-700 hover:text-[#FF7A00]'
                 }`}
             >
               <span>Beranda</span>
@@ -136,8 +135,8 @@ export const Navbar: React.FC = () => {
               <Link
                 href={aboutPath}
                 className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('tentang-yayasan')
-                    ? 'text-[#00223D]'
-                    : 'text-slate-700 hover:text-[#FF7A00]'
+                  ? 'text-[#00223D]'
+                  : 'text-slate-700 hover:text-[#FF7A00]'
                   }`}
               >
                 <span>Tentang Yayasan</span>
@@ -167,8 +166,8 @@ export const Navbar: React.FC = () => {
               <Link
                 href={routeMappings.institutions}
                 className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('lembaga')
-                    ? 'text-[#00223D]'
-                    : 'text-slate-700 hover:text-[#FF7A00]'
+                  ? 'text-[#00223D]'
+                  : 'text-slate-700 hover:text-[#FF7A00]'
                   }`}
               >
                 <span>{dict.nav.institutions}</span>
@@ -207,8 +206,8 @@ export const Navbar: React.FC = () => {
               <Link
                 href={programsPath}
                 className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('program')
-                    ? 'text-[#00223D]'
-                    : 'text-slate-700 hover:text-[#FF7A00]'
+                  ? 'text-[#00223D]'
+                  : 'text-slate-700 hover:text-[#FF7A00]'
                   }`}
               >
                 <span>Program Sosial</span>
@@ -237,8 +236,8 @@ export const Navbar: React.FC = () => {
             <Link
               href={newsPath}
               className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('berita')
-                  ? 'text-[#00223D]'
-                  : 'text-slate-700 hover:text-[#FF7A00]'
+                ? 'text-[#00223D]'
+                : 'text-slate-700 hover:text-[#FF7A00]'
                 }`}
             >
               <span>Berita & Kegiatan</span>
@@ -251,8 +250,8 @@ export const Navbar: React.FC = () => {
             <Link
               href={galleryPath}
               className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('galeri')
-                  ? 'text-[#00223D]'
-                  : 'text-slate-700 hover:text-[#FF7A00]'
+                ? 'text-[#00223D]'
+                : 'text-slate-700 hover:text-[#FF7A00]'
                 }`}
             >
               <span>Galeri</span>
@@ -265,8 +264,8 @@ export const Navbar: React.FC = () => {
             <Link
               href={contactPath}
               className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('kontak')
-                  ? 'text-[#00223D]'
-                  : 'text-slate-700 hover:text-[#FF7A00]'
+                ? 'text-[#00223D]'
+                : 'text-slate-700 hover:text-[#FF7A00]'
                 }`}
             >
               <span>Kontak</span>
@@ -275,18 +274,6 @@ export const Navbar: React.FC = () => {
               )}
             </Link>
           </nav>
-
-          {/* Right CTA Button */}
-          <div className="hidden sm:flex items-center">
-            <Link
-              href={regPath}
-              className="inline-flex items-center gap-2 px-4 lg:px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF8500] hover:from-[#E65F00] hover:to-[#FF7A00] text-white text-xs lg:text-sm font-bold shadow-md hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5 transition-all duration-200 shrink-0"
-            >
-              <HeartHandshake className="w-4 h-4 text-white shrink-0" />
-              <span>Layanan Sosial / Pengajuan</span>
-              <ArrowRight className="w-4 h-4 text-white/90 shrink-0" />
-            </Link>
-          </div>
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center xl:hidden">
@@ -307,9 +294,8 @@ export const Navbar: React.FC = () => {
           <nav className="flex flex-col space-y-1">
             <Link
               href={homePath}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold flex items-center justify-between ${
-                isHome ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
-              }`}
+              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold flex items-center justify-between ${isHome ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
+                }`}
             >
               <span>Beranda</span>
               {isHome && <span className="w-2 h-2 rounded-full bg-[#FF7A00]" />}
@@ -399,44 +385,31 @@ export const Navbar: React.FC = () => {
 
             <Link
               href={newsPath}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${
-                pathname.includes('berita') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
-              }`}
+              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${pathname.includes('berita') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
+                }`}
             >
               Berita & Kegiatan
             </Link>
 
             <Link
               href={galleryPath}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${
-                pathname.includes('galeri') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
-              }`}
+              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${pathname.includes('galeri') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
+                }`}
             >
               Galeri
             </Link>
 
             <Link
               href={contactPath}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${
-                pathname.includes('kontak') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
-              }`}
+              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${pathname.includes('kontak') ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
+                }`}
             >
               Kontak
             </Link>
           </nav>
 
-          {/* Mobile Main CTA Button */}
-          <div className="pt-2 border-t border-gray-100 flex flex-col gap-2.5">
-            <Link
-              href={regPath}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF8500] text-white text-sm font-bold shadow-md shadow-orange-500/20 text-center"
-            >
-              <HeartHandshake className="w-4 h-4" />
-              <span>Layanan Sosial / Pengajuan</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-
-            {/* Mobile Quick Contacts Box */}
+          {/* Mobile Quick Contacts Box */}
+          <div className="pt-2 border-t border-gray-100">
             <div className="p-3.5 rounded-2xl bg-[#00223D] text-white space-y-2 mt-2">
               <div className="flex items-center justify-between text-[11px] text-[#FFBA3A] font-semibold border-b border-white/10 pb-1.5">
                 <span className="flex items-center gap-1.5">
