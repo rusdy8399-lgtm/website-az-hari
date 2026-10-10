@@ -51,6 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp';
+
 export default function RootLayout({
   children,
 }: {
@@ -58,8 +60,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={`${oswald.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#1A1A2E] antialiased">
+      <body className="min-h-screen flex flex-col bg-white text-[#1A1A2E] antialiased relative">
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

@@ -19,9 +19,9 @@ export const LeadershipSection: React.FC = () => {
           />
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-sky-400/10 blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center p-8 sm:p-10 md:p-12 lg:p-14">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center p-5 sm:p-8 md:p-12 lg:p-14">
             {/* Left Content */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-5">
+            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-5">
               <div className="inline-flex items-center gap-2">
                 <span className="text-xs md:text-sm font-semibold tracking-wider text-sky-200">
                   Sambutan Ketua Yayasan
@@ -29,11 +29,11 @@ export const LeadershipSection: React.FC = () => {
               </div>
 
               {/* Headline */}
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15]">
+              <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15]">
                 <span className="text-[#F5A623] block">
                   Selamat Datang di
                 </span>
-                <span className="text-white block mt-1">
+                <span className="text-white block mt-0.5 sm:mt-1">
                   Yayasan Sosial Azhar Mandiri
                 </span>
               </h2>
@@ -79,8 +79,8 @@ export const LeadershipSection: React.FC = () => {
             <div className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-end">
               <div className="relative w-64 sm:w-72 md:w-80 lg:w-full max-w-[340px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-                  alt="Ketua Yayasan Sosial Azhar Mandiri"
+                  src="/ketua-yayasan.jpg"
+                  alt="Fahrun Rozi, S.Pd.I - Ketua Yayasan Sosial Azhar Mandiri"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 280px, 340px"

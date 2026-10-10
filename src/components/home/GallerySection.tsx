@@ -53,11 +53,11 @@ export const GallerySection: React.FC = () => {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
-                <span className="text-[10px] uppercase font-bold text-[#E5A928]">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-4 text-white">
+                <span className="text-[10px] uppercase font-bold text-[#FFBA3A] tracking-wider">
                   {item.category}
                 </span>
-                <p className="text-xs font-semibold line-clamp-2 mt-0.5">
+                <p className="text-xs font-bold line-clamp-2 mt-0.5 text-white/95 leading-snug">
                   {item.title}
                 </p>
               </div>

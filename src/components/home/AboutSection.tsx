@@ -10,13 +10,13 @@ export const AboutSection: React.FC = () => {
   const aboutPath = routeMappings.about;
 
   return (
-    <section className="py-20 bg-[#FAF9F5] relative overflow-hidden">
+    <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           {/* Left Column: Visual Collage */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative h-96 sm:h-[450px] rounded-3xl overflow-hidden shadow-card border border-slate-200">
+              <div className="relative h-72 sm:h-96 md:h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80"
                   alt="Aktivitas Pelayanan Sosial Yayasan Sosial Azhar Mandiri"
@@ -25,25 +25,25 @@ export const AboutSection: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00223D]/90 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white">
                   <p className="text-xs uppercase tracking-wider text-[#F5A623] font-bold">
                     Pengabdian Sejak 2015
                   </p>
-                  <p className="text-sm font-semibold mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-[#F5A623] shrink-0" />
+                  <p className="text-xs sm:text-sm font-semibold mt-1 flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F5A623] shrink-0" />
                     <span>Praya, Lombok Tengah, NTB</span>
                   </p>
                 </div>
               </div>
 
               {/* Overlapping Badge: SK Legal */}
-              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3.5 max-w-[260px]">
-                <div className="w-12 h-12 rounded-xl bg-sky-50 text-[#00609C] flex items-center justify-center shrink-0">
-                  <Shield className="w-6 h-6" />
+              <div className="absolute -top-3 -right-2 sm:-top-6 sm:-right-6 bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 flex items-center gap-2.5 sm:gap-3.5 max-w-[220px] sm:max-w-[260px]">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sky-50 text-[#00609C] flex items-center justify-center shrink-0">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-500 font-medium">SK Kemenkumham RI</p>
-                  <p className="text-xs font-bold text-[#00223D]">
+                  <p className="text-[10px] sm:text-[11px] text-gray-500 font-medium">SK Kemenkumham RI</p>
+                  <p className="text-[11px] sm:text-xs font-bold text-[#00223D] truncate">
                     {foundationMock.decreeNumber}
                   </p>
                 </div>

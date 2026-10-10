@@ -15,9 +15,13 @@ import {
   Sparkles,
   Users,
   Building2,
-  FileText
+  FileText,
+  MessageCircle,
+  Phone,
+  ShieldCheck
 } from 'lucide-react';
 import { getDictionary, routeMappings } from '@/lib/i18n';
+import { foundationMock } from '@/mock';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname() || '/';
@@ -90,22 +94,22 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Name */}
-          <Link href={homePath} className="flex items-center gap-3 group shrink-0 py-1">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 relative shrink-0">
+          <Link href={homePath} className="flex items-center gap-2.5 sm:gap-3 group shrink-0 py-1 max-w-[75%] sm:max-w-none">
+            <div className="w-10 h-10 sm:w-13 sm:h-13 relative shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="Logo Yayasan Sosial Azhar Mandiri"
-                width={56}
-                height={56}
+                width={52}
+                height={52}
                 className="w-full h-full object-contain drop-shadow-xs"
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-base sm:text-lg lg:text-xl text-[#00223D] tracking-tight leading-snug group-hover:text-[#00609C] transition">
+            <div className="flex flex-col min-w-0">
+              <span className="font-heading font-extrabold text-sm sm:text-base lg:text-xl text-[#00223D] tracking-tight leading-snug group-hover:text-[#00609C] transition truncate">
                 Yayasan Sosial Azhar Mandiri
               </span>
-              <span className="text-[11px] sm:text-xs font-semibold text-[#FF7A00] tracking-wide mt-0.5">
+              <span className="text-[10px] sm:text-xs font-semibold text-[#FF7A00] tracking-wide mt-0.5 truncate">
                 Berbagi Ilmu, Menebar Manfaat
               </span>
             </div>
@@ -116,11 +120,10 @@ export const Navbar: React.FC = () => {
             {/* Beranda */}
             <Link
               href={homePath}
-              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                isHome
+              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${isHome
                   ? 'text-[#00223D]'
                   : 'text-slate-700 hover:text-[#FF7A00]'
-              }`}
+                }`}
             >
               <span>Beranda</span>
               {isHome && (
@@ -132,11 +135,10 @@ export const Navbar: React.FC = () => {
             <div className="relative group">
               <Link
                 href={aboutPath}
-                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                  pathname.includes('tentang-yayasan')
+                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('tentang-yayasan')
                     ? 'text-[#00223D]'
                     : 'text-slate-700 hover:text-[#FF7A00]'
-                }`}
+                  }`}
               >
                 <span>Tentang Yayasan</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 group-hover:text-[#FF7A00] transition-transform duration-200" />
@@ -164,11 +166,10 @@ export const Navbar: React.FC = () => {
             <div className="relative group">
               <Link
                 href={routeMappings.institutions}
-                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                  pathname.includes('lembaga')
+                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('lembaga')
                     ? 'text-[#00223D]'
                     : 'text-slate-700 hover:text-[#FF7A00]'
-                }`}
+                  }`}
               >
                 <span>{dict.nav.institutions}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 group-hover:text-[#FF7A00] transition-transform duration-200" />
@@ -205,11 +206,10 @@ export const Navbar: React.FC = () => {
             <div className="relative group">
               <Link
                 href={programsPath}
-                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                  pathname.includes('program')
+                className={`flex items-center gap-1 px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('program')
                     ? 'text-[#00223D]'
                     : 'text-slate-700 hover:text-[#FF7A00]'
-                }`}
+                  }`}
               >
                 <span>Program Sosial</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 group-hover:text-[#FF7A00] transition-transform duration-200" />
@@ -236,11 +236,10 @@ export const Navbar: React.FC = () => {
             {/* Berita & Kegiatan */}
             <Link
               href={newsPath}
-              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                pathname.includes('berita')
+              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('berita')
                   ? 'text-[#00223D]'
                   : 'text-slate-700 hover:text-[#FF7A00]'
-              }`}
+                }`}
             >
               <span>Berita & Kegiatan</span>
               {pathname.includes('berita') && (
@@ -251,11 +250,10 @@ export const Navbar: React.FC = () => {
             {/* Galeri */}
             <Link
               href={galleryPath}
-              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                pathname.includes('galeri')
+              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('galeri')
                   ? 'text-[#00223D]'
                   : 'text-slate-700 hover:text-[#FF7A00]'
-              }`}
+                }`}
             >
               <span>Galeri</span>
               {pathname.includes('galeri') && (
@@ -266,11 +264,10 @@ export const Navbar: React.FC = () => {
             {/* Kontak */}
             <Link
               href={contactPath}
-              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${
-                pathname.includes('kontak')
+              className={`px-3 py-2 text-[13px] font-bold tracking-normal transition-colors relative ${pathname.includes('kontak')
                   ? 'text-[#00223D]'
                   : 'text-slate-700 hover:text-[#FF7A00]'
-              }`}
+                }`}
             >
               <span>Kontak</span>
               {pathname.includes('kontak') && (
@@ -306,33 +303,34 @@ export const Navbar: React.FC = () => {
 
       {/* ── Mobile Drawer ──────────────────────────────────────────── */}
       {mobileMenuOpen && (
-        <div className="xl:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 space-y-1 shadow-2xl max-h-[85vh] overflow-y-auto">
+        <div className="xl:hidden border-t border-gray-100 bg-white px-4 pt-4 pb-8 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto animate-in fade-in slide-in-from-top-3 duration-200">
           <nav className="flex flex-col space-y-1">
             <Link
               href={homePath}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+              className={`px-3.5 py-2.5 rounded-xl text-sm font-bold flex items-center justify-between ${
                 isHome ? 'bg-orange-50 text-[#FF7A00]' : 'text-slate-800 hover:bg-slate-50'
               }`}
             >
-              Beranda
+              <span>Beranda</span>
+              {isHome && <span className="w-2 h-2 rounded-full bg-[#FF7A00]" />}
             </Link>
 
             {/* Mobile About Accordion */}
-            <div>
+            <div className="rounded-xl overflow-hidden bg-slate-50/60 border border-slate-100">
               <button
                 onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-100/70 transition"
               >
                 <span>Tentang Yayasan</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#FF7A00]' : ''}`} />
               </button>
               {aboutDropdownOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1">
+                <div className="px-3 pb-2 pt-1 space-y-1 bg-white border-t border-slate-100">
                   {aboutSubmenus.map((sub) => (
                     <Link
                       key={sub.name}
                       href={sub.href}
-                      className="flex items-center gap-2 p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00]"
+                      className="flex items-center gap-2.5 p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00] transition"
                     >
                       {sub.icon}
                       <span>{sub.name}</span>
@@ -343,28 +341,28 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Institutions Accordion */}
-            <div>
+            <div className="rounded-xl overflow-hidden bg-slate-50/60 border border-slate-100">
               <button
                 onClick={() => setInstitutionsDropdownOpen(!institutionsDropdownOpen)}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-100/70 transition"
               >
                 <span>{dict.nav.institutions}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${institutionsDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${institutionsDropdownOpen ? 'rotate-180 text-[#FF7A00]' : ''}`} />
               </button>
               {institutionsDropdownOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1">
+                <div className="px-3 pb-2 pt-1 space-y-1 bg-white border-t border-slate-100">
                   {institutions.map((inst) => (
                     <Link
                       key={inst.name}
                       href={inst.href}
-                      className="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00]"
+                      className="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00] transition"
                     >
                       <div className="flex items-center gap-2">
                         {inst.icon}
                         <span>{inst.name}</span>
                       </div>
                       {inst.badge && (
-                        <span className="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded-full">
+                        <span className="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
                           {inst.badge}
                         </span>
                       )}
@@ -375,21 +373,21 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Programs Accordion */}
-            <div>
+            <div className="rounded-xl overflow-hidden bg-slate-50/60 border border-slate-100">
               <button
                 onClick={() => setProgramsDropdownOpen(!programsDropdownOpen)}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-100/70 transition"
               >
                 <span>Program Sosial</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${programsDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180 text-[#FF7A00]' : ''}`} />
               </button>
               {programsDropdownOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1">
+                <div className="px-3 pb-2 pt-1 space-y-1 bg-white border-t border-slate-100">
                   {programSubmenus.map((sub) => (
                     <Link
                       key={sub.name}
                       href={sub.href}
-                      className="flex items-center gap-2 p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00]"
+                      className="flex items-center gap-2.5 p-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-orange-50 hover:text-[#FF7A00] transition"
                     >
                       {sub.icon}
                       <span>{sub.name}</span>
@@ -427,15 +425,45 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          <div className="pt-4 border-t border-gray-100 flex flex-col gap-2.5">
+          {/* Mobile Main CTA Button */}
+          <div className="pt-2 border-t border-gray-100 flex flex-col gap-2.5">
             <Link
               href={regPath}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF8500] text-white text-sm font-bold shadow-md text-center"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF8500] text-white text-sm font-bold shadow-md shadow-orange-500/20 text-center"
             >
               <HeartHandshake className="w-4 h-4" />
               <span>Layanan Sosial / Pengajuan</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
+
+            {/* Mobile Quick Contacts Box */}
+            <div className="p-3.5 rounded-2xl bg-[#00223D] text-white space-y-2 mt-2">
+              <div className="flex items-center justify-between text-[11px] text-[#FFBA3A] font-semibold border-b border-white/10 pb-1.5">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  Legalitas Resmi Terdaftar
+                </span>
+                <span className="text-[10px] text-white/70">Lombok Tengah</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href={`https://wa.me/${foundationMock.whatsapp.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition text-center"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href={`tel:${foundationMock.phone.replace(/\D/g, '')}`}
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition text-center"
+                >
+                  <Phone className="w-3.5 h-3.5 shrink-0" />
+                  <span>Telepon</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}

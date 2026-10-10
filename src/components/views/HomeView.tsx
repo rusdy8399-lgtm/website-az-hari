@@ -6,6 +6,7 @@ import { Hero } from '@/components/home/Hero';
 import { ProgramsSection } from '@/components/home/ProgramsSection';
 import { LeadershipSection } from '@/components/home/LeadershipSection';
 import { AboutSection } from '@/components/home/AboutSection';
+import { StatisticsSection } from '@/components/home/StatisticsSection';
 import { InstitutionsSection } from '@/components/home/InstitutionsSection';
 import { NewsSection } from '@/components/home/NewsSection';
 import { GallerySection } from '@/components/home/GallerySection';
@@ -33,7 +34,10 @@ export const HomeView: React.FC = () => {
         {/* 6. Tentang Yayasan & Profil */}
         <AboutSection />
 
-        {/* 7. Lembaga di Bawah Naungan */}
+        {/* 7. Statistik & Dampak Sosial */}
+        <StatisticsSection />
+
+        {/* 8. Lembaga di Bawah Naungan */}
         <InstitutionsSection />
 
         {/* 8. Berita & Kegiatan */}
