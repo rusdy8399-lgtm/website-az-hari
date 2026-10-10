@@ -27,7 +27,7 @@ export const idDictionary = {
   nav: {
     home: 'Beranda',
     about: 'Tentang Yayasan',
-    institutions: 'Layanan & Bidang',
+    institutions: 'Lembaga & Unit Pendidikan',
     programs: 'Program Sosial',
     news: 'Berita & Kegiatan',
     gallery: 'Galeri',

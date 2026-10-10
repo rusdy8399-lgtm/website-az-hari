@@ -160,7 +160,7 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Layanan & Bidang / Lembaga Dropdown */}
+            {/* Lembaga & Unit Pendidikan Dropdown */}
             <div className="relative group">
               <Link
                 href={routeMappings.institutions}
@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
                     : 'text-slate-700 hover:text-[#FF7A00]'
                 }`}
               >
-                <span>Layanan & Bidang</span>
+                <span>{dict.nav.institutions}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 group-hover:text-[#FF7A00] transition-transform duration-200" />
                 {pathname.includes('lembaga') && (
                   <span className="absolute bottom-0 left-3 right-3 h-[3px] bg-[#FF7A00] rounded-full" />
@@ -348,7 +348,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setInstitutionsDropdownOpen(!institutionsDropdownOpen)}
                 className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50"
               >
-                <span>Layanan & Bidang</span>
+                <span>{dict.nav.institutions}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${institutionsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {institutionsDropdownOpen && (
